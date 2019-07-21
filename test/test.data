@@ -1,0 +1,9 @@
+
+  {
+    value : 10000,
+    age : 1,
+    collisions : 1,
+    mileage : 1000,
+    owners : 1,
+    expected : 10670
+  }

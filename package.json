@@ -1,0 +1,22 @@
+{
+  "name": "carvalue",
+  "version": "1.0.0",
+  "description": "This endpoint takes in data about a vehicle, then returns the value of a used car.",
+  "main": "index.js",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "async": "^2.6.2",
+    "csv-parser": "^2.3.0",
+    "express": "^4.16.4",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.18.10",
+    "request": "^2.88.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "drewlshoaf",
+  "license": "ISC"
+}
