@@ -1,15 +1,15 @@
-const express = require("express");
-const router = express.Router();
-const async = require("async");
+const express = require("express"),
+  router = express.Router(),
+  async = require("async");
 
 //validation
-const isEmpty = require("../validation/emptiness");
-const validateInputs = require("../validation/validateInputs");
+const isEmpty = require("../validation/emptiness"),
+  validateInputs = require("../validation/validateInputs");
 
 //modules
-const lookupByZip = require("../modules/closestByZip");
-const lookupByAddress = require("../modules/closestByAddress");
-const distanceBetweenPoints = require("../modules/distanceBetweenPoints");
+const closestByZip = require("../modules/closestByZip"),
+  closestByAddress = require("../modules/closestByAddress"),
+  distanceBetweenPoints = require("../modules/distanceBetweenPoints");
 
 // @route GET /
 // @desc
@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
     if (err) {
       res.status(400).json(err);
     } else {
-      res.status(200).json(result);
+      res.status(200).json(result[0]);
     }
   });
 
@@ -31,12 +31,12 @@ router.get("/", (req, res) => {
 
   function getGeo(data, callback) {
     if (data.type === "zip") {
-      lookupByZip.exec(data.value.substring(0, 5), (err, result) => {
+      closestByZip.exec(data.value.substring(0, 5), (err, result) => {
         handleCallback(err, result, callback);
       });
     }
     if (data.type === "address") {
-      lookupByAddress.exec(data.value, (err, result) => {
+      closestByAddress.exec(data.value, (err, result) => {
         handleCallback(err, result, callback);
       });
     }

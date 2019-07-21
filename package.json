@@ -1,7 +1,7 @@
 {
-  "name": "carvalue",
+  "name": "closest",
   "version": "1.0.0",
-  "description": "This endpoint takes in data about a vehicle, then returns the value of a used car.",
+  "description": "http server which returns the closest location from a list of locations, given a zipcode or address",
   "main": "index.js",
   "dependencies": {
     "assert": "^2.0.0",
@@ -15,7 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "author": "drewlshoaf",
   "license": "ISC"

@@ -1,11 +1,11 @@
 module.exports = {
-  //service port
+  //http port
   port: 3001,
 
-  //storedata
+  //storedata source
   storedata: "data/store-locations.csv",
 
-  //zipdata
+  //zipdata source
   zipdata: "data/zip.csv",
 
   //zipcodeapikey - zipcodeapi.com, service for zip => geo

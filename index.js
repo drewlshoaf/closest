@@ -8,10 +8,20 @@ app = express();
 app.use("/closest/", closest);
 
 /*
-  startup
+  startup routine
+  //preload datasets before starting server
 */
 
-const loadZipData = callback => {
+async.series([
+  callback => {
+    async.parallel([zipData, storeData], function(err, result) {
+      callback(null);
+    });
+  },
+  httpserver
+]);
+
+function zipData(callback) {
   //loadZipData
   parseCSV.exec(config.zipdata, (err, result) => {
     if (err) {
@@ -23,9 +33,9 @@ const loadZipData = callback => {
     }
     callback(null);
   });
-};
+}
 
-const loadStoreData = callback => {
+function storeData(callback) {
   //loadStoreData
   parseCSV.exec(config.storedata, (err, result) => {
     if (err) {
@@ -37,21 +47,12 @@ const loadStoreData = callback => {
     }
     callback(null);
   });
-};
+}
 
-const httpserver = callback => {
+function httpserver(callback) {
   const port = process.env.PORT || config.port;
   app.listen(port, () =>
     console.log(Date(), `httpserver started on port ${port}`)
   );
   callback(null);
-};
-
-async.series([
-  callback => {
-    async.parallel([loadZipData, loadStoreData], function(err, result) {
-      callback(null);
-    });
-  },
-  httpserver
-]);
+}
