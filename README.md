@@ -1,2 +1,3 @@
 # closest
-given a zipcode or address, returns the closest location from a list of locations
+
+http server which returns the closest location from a list of locations, given a zipcode or address
