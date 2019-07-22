@@ -8,13 +8,13 @@ clone repository, then run:
 
     npm install
 
-# testing
+# test
 
 run:
 
     npm test
 
-# testing
+# run
 
 run:
 
@@ -22,25 +22,25 @@ run:
 
 # usage
 
-use this API to find the closest store to a zip code. send a GET request to:
+- **zip**
 
-    https://<server>/closest/?zip=<xcxxxx-xxxx>
+find the closest store to a given zip code
 
-- **params**
+    sample GET request by zip: https://localhost/closest/?zip=27705-0000
 
-  @zip: 10-digit zip code in format xxxxx-xxxx
+- **address**
 
-* **output:**
+find the closest store to a given address
 
-  <_The request type_>
-
-  `GET`
+    sample GET request by zip: https://localhost/closest/?address=777 Brockton Avenue, Abington MA 2351
 
 - **Success Response:**
 
   - **Code:** 200 <br />
     **Content:**
     <br />
+    returns an array of objects, as follows:
+    [
     {
     "Distance": "3.47",
     "Unit": "Nautical Miles",
@@ -54,25 +54,18 @@ use this API to find the closest store to a zip code. send a GET request to:
     "Longitude": "-78.9587215",
     "County": "Durham County"
     }
+    ]
 
-* **Error Response:**
+  - **Code:** 400 NOT FOUND<br />
+    **Content:**
+    <br />
+    result was not found
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  - **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  - **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
-
-* **Sample Call:**
-
-  <_Just a sample call to your endpoint in a runnable format (\$.ajax call or a curl request) - this makes life easier and more predictable._>
+  - **Code:** 422 INVALID ENTRY <br />
+    **Content:**
+    <br />
+    invalid request params
 
 * **Notes:**
 
   <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._>
-
-  npm start
