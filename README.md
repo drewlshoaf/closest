@@ -20,14 +20,21 @@ run:
 
     npm start
 
-# other
+# usage
 
-1. We are not entirely clear on the age calculation requirements. We could potententially calculate age in a compounding manner, ie: reduce the present value of the vehicle based on the prior months present value, or simply reduce the value based on a cumulative percentage. We're assuming and have chosen the latter.
+## **Title**
 
-2. We've made a number of assumptions on what the input values may constitute in terms of types, lengths, values, etc. These assumptions are represented in /validation/validateInputs.js
+<_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
 
-3. With respect to the "owners" input rules, we assume that the clause "If the car has had more than 2 previous owners" means that the "owners" input must be at least 4, in order to be invoked. In other words "If the car has had at least 4 owners including the present owner", then ... If this is not a correct interpretation, then we can easil change this value in /config.js
+- **URL**
 
-# credit
+  <_The URL Structure (path only, no root url)_>
 
-/validation/is-empty.js is a validation script which evaluates various types of "emptiness". It was developed by Brad Traversy https://www.traversymedia.com/.
+- **Method:**
+
+  <_The request type_>
+
+  `GET` | `POST` | `DELETE` | `PUT`
+
+
+    npm start
