@@ -60,24 +60,15 @@ find the closest store to a given address
     returns an array of objects, example object:
     <br />
 
-* **zip**
+* **address**
 
 find the closest store to a given zip code
 
-    sample GET request: {
-
-"Distance": "3.47",
-"Unit": "Nautical Miles",
-"Store Name": "Durham",
-"Store Location": "SWC Shannon Rd & US Hwy 15-501",
-"Address": "4037 Durham Chapel Hill Blvd",
-"City": "Durham",
-"State": "NC",
-"Zip Code": "27707-2516",
-"Latitude": "35.966045",
-"Longitude": "-78.9587215",
-"County": "Durham County"
-}
+    sample GET request:
+    </br>
+    {
+      "Distance": "3.47",
+    }
 
 - **address**
 
