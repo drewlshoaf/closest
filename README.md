@@ -60,9 +60,6 @@ find the closest store to a given address
     returns an array of objects, example object:
     <br />
 
-* **address**
-
-find the closest store to a given zip code
 
     {
       "Distance": "3.47",
