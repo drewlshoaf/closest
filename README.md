@@ -11,6 +11,7 @@ Closest is an http server which finds the closest "store" from a list of stores,
 - The solution uses the npm validator validation framework for input validation. Some basic validation has been provided.
 - config.js contains a number of configurable app-level options which can be easily adjusted
 - distanceBetweenPoints.js is a modification of GeoDataSource.com's distance function. See 3rd party Credits for copyright and original code
+- The solution uses 3rd party api data from zipcodeapi.com and developer.mapquest.com. Both services have provided free development licenses with quotas. Please note that if hourly quotas are exceeded, errors may occur when using this service.
 
 # improvements
 
