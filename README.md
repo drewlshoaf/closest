@@ -22,9 +22,9 @@ run:
 
 # usage
 
-## **zip**
+use this API to find the closest store to a zip code. send a GET request to:
 
-zip returns the closest store, given a zip code
+    https://<server>/closest/?zip=<xcxxxx-xxxx>
 
 - **params**
 
