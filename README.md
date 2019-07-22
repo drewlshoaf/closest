@@ -22,35 +22,29 @@ run:
 
 # usage
 
-## **Title**
+## **zip**
 
-<_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+returns closest store by 10-digit zip code
 
 - **URL**
 
-  <_The URL Structure (path only, no root url)_>
+  zip?zip=xxxxx-xxxx
 
 - **Method:**
 
   <_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
+  `GET`
 
 * **URL Params**
 
-  <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._>
-
   **Required:**
 
-  `id=[integer]`
+  @zip: 10-digit zip code in format xxxxx-xxxx
 
   **Optional:**
 
-  `photo_id=[alphanumeric]`
-
-* **Data Params**
-
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+  @numrecords: ///maybe...
 
 * **Success Response:**
 
@@ -58,6 +52,20 @@ run:
 
   - **Code:** 200 <br />
     **Content:** `{ id : 12 }`
+    [
+    {
+    "Distance": "3.47",
+    "Unit": "Nautical Miles",
+    "Store Name": "Durham",
+    "Store Location": "SWC Shannon Rd & US Hwy 15-501",
+    "Address": "4037 Durham Chapel Hill Blvd",
+    "City": "Durham",
+    "State": "NC",
+    "Zip Code": "27707-2516",
+    "Latitude": "35.966045",
+    "Longitude": "-78.9587215",
+    "County": "Durham County"
+    },
 
 * **Error Response:**
 
