@@ -6,12 +6,30 @@ http server which returns the closest location from a list of locations, given a
 
 configuration options in /config.js:
 
-    "async": "^2.6.2" - async.series is helping us control flow and manage sequenced tasks
-    "express": "^4.16.4", - http routing, logging
-    "mocha": "^6.0.2", - for unit testing, see testing
-    "nodemon": "^1.18.10", - for development
-    "request": "^2.88.0", - used to request remote resources
-    "validator": "^10.11.0" - used for validation (rudimentary for this project) of user inputs
+//http port
+port: 3001
+
+//storedata source
+storedata: "data/store-locations.csv",
+
+//zipdata source
+zipdata: "data/zip.csv",
+
+//zipcodeapikey - zipcodeapi.com, service for zip => geo
+zipcodeapikey:
+"YTH2SfDYAJUlp8boFtCdka9FK21CHWxuxhpe810zd53mUJ1kUffvySS53l077qkA",
+
+//mapquestkey - developer.mapquest.com, service for address => geo
+mapquestkey: "kUS0aqbhuU3gXjJjNQVESylYG0QqUHQq",
+
+//oDist N==nautical miles, K==kilometres
+optDistance: "N",
+
+//oDistName long name
+optDistanceName: "Nautical Miles",
+
+//distanceFixed //# decimal places for nautical miles and kilometres
+distanceFixed: 2
 
 # dependencies
 
