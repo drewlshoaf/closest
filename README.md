@@ -8,7 +8,7 @@ Closest is an http server which finds the closest "store" from a list of stores,
 - The startup sequence in index.js loads multiple data sources (zip code data, store data) before starting the http server.
 - For zip code searches, a local zip code file with goecodes has been provided. The solution attempts to obtain geocodes from storage prior to using an external service. The solution could be easily improved to continuously append new zip code data to the local storage file.
 - The solution uses thge Express framework, with a single route: GET /closest
-- The solution uses the npm validator validation framework for input validation. Some basic validation has been provided, but this is an area which could use improvement.
+- The solution uses the npm validator validation framework for input validation. Some basic validation has been provided.
 - config.js contains a number of configurable app-level options which can be easily adjusted
 - distanceBetweenPoints.js is a modification of GeoDataSource.com's distance function. See 3rd party Credits for copyright and original code
 
@@ -45,19 +45,20 @@ run:
 
 find the closest store to a given zip code
 
-    sample GET request by zip: https://localhost/closest/?zip=27705-0000
+    sample GET request: https://localhost/closest/?zip=27705-0000
 
 - **address**
 
 find the closest store to a given address
 
-    sample GET request by zip: https://localhost/closest/?address=777 Brockton Avenue, Abington MA
+    sample GET request: https://localhost/closest/?address=777 Brockton Avenue, Abington MA
 
 - **Success Response:**
 
   - **Code:** 200 <br />
     <br />
-    returns an array of objects, as follows:
+    returns an array of objects, example object:
+    <br />
     {
     "Distance": "3.47",
     "Unit": "Nautical Miles",
@@ -71,6 +72,7 @@ find the closest store to a given address
     "Longitude": "-78.9587215",
     "County": "Durham County"
     }
+    <br />
 
   - **Code:** 400 NOT FOUND<br />
     <br />
