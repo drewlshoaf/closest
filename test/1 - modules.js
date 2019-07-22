@@ -43,6 +43,8 @@ describe("1 - modules", function() {
       });
     });
   });
+
+  //future improvement: dev test w/ local data
   /*
   describe("module: distance between points", function() {
     it("36.0212314,-78.9143841", function(done) {
@@ -66,6 +68,7 @@ describe("1 - modules", function() {
       });
     });
   });
+  //future improvement: dev test w/ local data
   /*
   describe("module: zip to geo from storage", function() {
     it("36.0212314,-78.9143841", function(done) {
