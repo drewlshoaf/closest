@@ -53,12 +53,14 @@ find the closest store to a given address
 
     sample GET request: https://localhost/closest/?address=777 Brockton Avenue, Abington MA
 
-- **Success Response:**
+- **success response:**
 
-  - **Code:** 200 <br />
+  - **code:** 200 <br />
     <br />
     returns an array of objects, example object:
     <br />
+
+
     {
     "Distance": "3.47",
     "Unit": "Nautical Miles",
@@ -72,8 +74,9 @@ find the closest store to a given address
     "Longitude": "-78.9587215",
     "County": "Durham County"
     }
+
     <br />
 
-  - **Code:** 400 NOT FOUND<br />
-    <br />
-    result was not found or invalid parameters
+- **code:** 400 NOT FOUND<br />
+  <br />
+  result was not found or invalid parameters
