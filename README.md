@@ -58,7 +58,11 @@ find the closest store to a given address
   - **code:** 200 SUCCESS
     <br />
     returns an array of objects, example object:
+    <br />
 
+* **address**
+
+find the closest store to a given zip code
 
     {
       "Distance": "3.47",
@@ -75,5 +79,4 @@ find the closest store to a given address
     }
 
 - **code:** 400 NOT FOUND<br />
-  <br />
   result was not found or invalid parameters
