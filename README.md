@@ -55,11 +55,13 @@ find the closest store to a given address
 
 - **success response:**
 
-  - **code:** 200 <br />
+  - **code:** 200 SUCCESS
     <br />
     returns an array of objects, example object:
     <br />
 
+
+    sample {} MA
 
     {
     "Distance": "3.47",
