@@ -1,5 +1,9 @@
-//@input: zip, callback
-//@output: null || json
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: zip to geo store
+//purpose: given a zip code, looks in local storage for geocode
+//@in: zip, string
+//@out: geocode in JSON
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const config = require("../config");
 const async = require("async");

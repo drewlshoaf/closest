@@ -1,3 +1,11 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: closest by zip
+//purpose: marshalls zip to geo - this is designed to allow for searching of multiple data sources, starting locally (geoStore), then via cloud (geoSvc)
+//note: the geoStore and geoSvc functions are designed to run sequentially in this case and must be modified if the order changes
+//@in: zip, string
+//@out: store data in JSON
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const async = require("async");
 const zipToGeoStore = require("./zipToGeoStore");
 const zipToGeoSvc = require("./zipToGeoSvc");

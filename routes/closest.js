@@ -1,3 +1,8 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: closest route
+//purpose: serves requests for GET /closest
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const express = require("express"),
   router = express.Router(),
   async = require("async");
@@ -12,23 +17,27 @@ const closestByZip = require("../modules/closestByZip"),
   distanceBetweenPoints = require("../modules/distanceBetweenPoints");
 
 // @route GET /
-// @desc
-// @access Public
+// @desc returns the closest store, given a valid zip code or address
+// @access Public (for now)
+// @in [zip=<zip code> | address=<address>]
+// @out [{store data}, ...]
 router.get("/", (req, res) => {
   async.waterfall([validate, getGeo, getClosest], (err, result) => {
     if (err) {
       res.status(400).json(err);
     } else {
-      res.status(200).json(result);
+      res.status(200).json(result[0]);
     }
   });
 
+  //validate inputs
   function validate(callback) {
     validateInputs.exec(req.query, (err, result) => {
       handleCallback(err, result, callback);
     });
   }
 
+  //get geocode
   function getGeo(data, callback) {
     if (data.type === "zip") {
       closestByZip.exec(data.value.substring(0, 5), (err, result) => {
@@ -42,12 +51,14 @@ router.get("/", (req, res) => {
     }
   }
 
+  //get the closest store
   function getClosest(data, callback) {
     distanceBetweenPoints.exec(data, (err, result) => {
       handleCallback(err, result, callback);
     });
   }
 
+  //callback handler
   function handleCallback(err, result, callback) {
     if (!isEmpty(err)) {
       callback(err);

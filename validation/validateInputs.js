@@ -1,3 +1,8 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: validate inputs
+//purpose: validates all user input
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const Validator = require("validator");
 const isEmpty = require("./emptiness");
 

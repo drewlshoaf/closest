@@ -1,3 +1,10 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: zip to geo svc
+//purpose: given a zip code, searches zipcodeapi.com for geocode
+//@in: zip, string
+//@out: geocode in JSON
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const config = require("../config");
 const https = require("https");
 

@@ -4,7 +4,7 @@ Closest is an http server which finds the closest "store" from a list of stores,
 
 # dev notes
 
-- The solution has been developed in node.js and tested on the node 11.2 version.
+- The solution has been developed in node.js and tested on the node 11.2 version with a mix of ECMA versions depending on purpose.
 - The startup sequence in index.js loads multiple data sources (zip code data, store data) before starting the http server.
 - For zip code searches, a local zip code file with goecodes has been provided. The solution attempts to obtain geocodes from storage prior to using an external service. The solution could be easily improved to continuously append new zip code data to the local storage file.
 - The solution uses thge Express framework, with a single route: GET /closest
@@ -20,6 +20,7 @@ Closest is an http server which finds the closest "store" from a list of stores,
 - Add additional input validation to cleanse or reject malicious strings.
 - Add additional input validation for address string validity
 - Extensive use of callback patterns started to make debugging a little tricky. Consider promise-based patterns or use of debugging options.
+- We are currently only returning a single record (closest store) per the requirement, however, the solution can very easily return an entire set of records with a very simple modification.
 
 # install
 
@@ -60,20 +61,19 @@ find the closest store to a given address
     returns an array of objects, example object:
     <br />
 
+{
+"Distance": "3.47",
+"Unit": "Nautical Miles",
+"Store Name": "Durham",
+"Store Location": "SWC Shannon Rd & US Hwy 15-501",
+"Address": "4037 Durham Chapel Hill Blvd",
+"City": "Durham",
+"State": "NC",
+"Zip Code": "27707-2516",
+"Latitude": "35.966045",
+"Longitude": "-78.9587215",
+"County": "Durham County"
+}
 
-    {
-      "Distance": "3.47",
-        "Unit": "Nautical Miles",
-        "Store Name": "Durham",
-        "Store Location": "SWC Shannon Rd & US Hwy 15-501",
-        "Address": "4037 Durham Chapel Hill Blvd",
-        "City": "Durham",
-        "State": "NC",
-        "Zip Code": "27707-2516",
-        "Latitude": "35.966045",
-        "Longitude": "-78.9587215",
-        "County": "Durham County"
-    }
-
-- **code:** 400 NOT FOUND<br />
+- **code:** 400 BAD REQUEST<br />
   result was not found or invalid parameters

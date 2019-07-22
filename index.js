@@ -1,3 +1,9 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: start server
+//purpose: loads zip data and store data, then starts http server
+//run: npm start
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const config = require("./config"),
   async = require("async"),
   express = require("express"),
@@ -6,11 +12,6 @@ const config = require("./config"),
 
 app = express();
 app.use("/closest/", closest);
-
-/*
-  startup routine
-  //preload datasets before starting server
-*/
 
 async.series([
   callback => {

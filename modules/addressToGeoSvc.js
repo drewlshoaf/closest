@@ -1,3 +1,10 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: address to geo svc
+//purpose: retrieves geocode from mapquest, given a valid address
+//@in: address, string
+//@out: geocode in JSON
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const config = require("../config");
 const https = require("https");
 

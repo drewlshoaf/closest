@@ -1,3 +1,11 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: distance between points
+//purpose: calculates the distance between two geocodes
+//credits: modified from GeoDataSource.com (C) All Rights Reserved 2018, see "3rd party Credits"
+//@in: pair - geocode in JSON
+//@out: sorted (asc) list of stores as array of objects
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const config = require("../config");
 const async = require("async");
 

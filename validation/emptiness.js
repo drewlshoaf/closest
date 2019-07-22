@@ -1,3 +1,8 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: emptiness
+//purpose: checks for various types of emptiness, ie: null, empty, zero, etc...
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const isEmpty = value =>
   value === undefined ||
   value === null ||

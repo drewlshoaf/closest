@@ -1,3 +1,10 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//name: parse CSV
+//purpose: utility for parsing CSV data, to array of objects
+//@in: datafile, string
+//@out: JSON
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 const csv = require("csv-parser");
 const fs = require("fs");
 
